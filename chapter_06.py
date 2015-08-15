@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 # app.py
+import re
 
 def cadastrar(nomes):
     print 'Digite o nome: '
@@ -34,6 +35,13 @@ def procurar (nomes):
     else:
         print 'Desculpe, nome %s não encontrado' % (nome_procurado)
 
+def procurar_por_regex(nomes):
+    print 'Digite a rEgex: '
+    rEgex = raw_input()
+    junta_tudo = ' '.join(nomes)    
+    resultados = re.findall(rEgex, junta_tudo)
+    print resultados
+
 def menu():
     nomes = []
     escolha = ''
@@ -44,6 +52,7 @@ def menu():
         print '3 - para remover'
         print '4 - para alterar'
         print '5 - para procurar'
+        print '6 - para procurar pos rEgex'
         print '0 - para terminar'
 
         escolha = raw_input()
@@ -57,4 +66,6 @@ def menu():
             alterar(nomes)
         if(escolha == '5'):
             procurar(nomes)
+        if(escolha == '6'):
+            procurar_por_regex(nomes)
 menu()
