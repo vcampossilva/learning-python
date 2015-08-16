@@ -11,4 +11,4 @@ class Pessoa(object):
 
     def imprime_imc(self):
         imc = self.peso / (self.altura * self.altura)
-        print 'IMC de %s: %s' % (self.nome, imc)       
+        print 'IMC de %s: %s' % (self.nome, imc)
